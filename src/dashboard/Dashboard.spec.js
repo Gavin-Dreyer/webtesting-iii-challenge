@@ -2,7 +2,6 @@ import React from 'react'
 import { render, fireEvent, queryAllByText } from '@testing-library/react';
 
 import Dashboard from './Dashboard'
-import { get } from 'http';
 
 test('it renders correctly', () => {
     render(<Dashboard />);
@@ -38,7 +37,7 @@ test('displays current display after clicking lock gate', () => {
     getByText(/unlock gate/i)
 })
 
-test('displays current display after clicking lock gate', () => {
+test('displays current display after clicking unlock gate', () => {
     const { getByText } = render(<Dashboard />)
 
     fireEvent.click(getByText(/close gate/i))
@@ -50,7 +49,7 @@ test('displays current display after clicking lock gate', () => {
     getByText(/lock gate/i)
 })
 
-test('displays current display after clicking lock gate', () => {
+test('displays current display after clicking open gate', () => {
     const { getByText } = render(<Dashboard />)
 
     fireEvent.click(getByText(/close gate/i))
